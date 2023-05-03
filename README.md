@@ -1,10 +1,4 @@
-# linux one liners about image processing
-
-## How to find all the sizes of all the images under a folder?
-
-```bash
-find . -type f -name "*.jpg"  -o -name "*.png" | xargs file |cut -d "," -f8|sort|uniq
-```
+# Linux one liners about image processing
 
 ## How to check if a file is a valid image?
 ```bash
@@ -32,5 +26,11 @@ output:
 identify-im6.q16: insufficient image data in file `corrupt.jpg' @ error/jpeg.c/ReadJPEGImage/1117.
 ```
 The exit status `$?` is 1.
+## How to find all the sizes of all the images under a folder?
+
+```bash
+find . -type f -name "*.jpg"  -o -name "*.png" | xargs file |cut -d "," -f8|sort|uniq
+```
+
 
 
