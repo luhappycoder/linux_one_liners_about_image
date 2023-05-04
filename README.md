@@ -34,12 +34,12 @@ find . -type f -name "*.jpg"  -o -name "*.png" | xargs file |cut -d "," -f8|sort
 
 ## How to identify non-image or corrup image files and delete it. note: `find` is recursive. Always double check, before delete something!
 ```bash
-find . -type f -exec bash -c "identify {} 2>/dev/null || rm {}" \;
+find . -type f -exec bash -c "identify {} &>/dev/null || rm {}" \;
 ```
 or add file types check:
 
 ```bash
-find . -type f -name "*.jpg"  -o -name "*.png"  -exec bash -c "identify {} 2>/dev/null || rm {}" \;
+find ./tu -type f  -exec bash -c "identify -quiet {} &>/dev/null || (echo {}; rm {})" \;
 ```
 
 
