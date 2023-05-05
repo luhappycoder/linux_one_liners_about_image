@@ -42,5 +42,10 @@ or add file types check:
 find ./tu -type f  -exec bash -c "identify -quiet {} &>/dev/null || (echo {}; rm {})" \;
 ```
 
+## How to rename file with md5sum hash(a way to rename wired file names(for instance space in file name), remove duplicated files...)
+```bash
+#$0: file name ${0##*.}: extension
+find . -type f -exec bash -c 'mv "$0" "$(md5sum "$0"|cut -d" " -f 1).${0##*.}"' {} \;
+```
 
 
