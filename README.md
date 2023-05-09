@@ -58,3 +58,7 @@ identify rgb.jpg
 #output: NOTE The 'sRGB'
 # rgb.jpg JPEG 5441x3627 5441x3627+0+0 8-bit sRGB 3.31259MiB 0.000u 0:00.009
 ```
+```bash
+# check if there are gray images?
+find . -type f -name "*.jpg" -exec bash -c "identify  {} &>/dev/null | grep -i gray" \;
+```
