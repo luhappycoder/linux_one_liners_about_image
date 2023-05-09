@@ -47,5 +47,5 @@ find ./tu -type f  -exec bash -c "identify -quiet {} &>/dev/null || (echo {}; rm
 #$0: file name ${0##*.}: extension
 find . -type f -exec bash -c 'mv "$0" "$(md5sum "$0"|cut -d" " -f 1).${0##*.}"' {} \;
 ```
-
+## How to tell a image is gray or color?
 
