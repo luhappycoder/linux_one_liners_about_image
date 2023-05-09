@@ -48,4 +48,13 @@ find ./tu -type f  -exec bash -c "identify -quiet {} &>/dev/null || (echo {}; rm
 find . -type f -exec bash -c 'mv "$0" "$(md5sum "$0"|cut -d" " -f 1).${0##*.}"' {} \;
 ```
 ## How to tell a image is gray or color?
-
+```bash
+identify gray.jpg
+#output: NOTE THE 'Gray'
+# gray.jpg JPEG 75x50 75x50+0+0 8-bit Gray 256c 1437B 0.000u 0:00.009```
+```
+```bash
+identify rgb.jpg
+#output: NOTE The 'sRGB'
+# rgb.jpg JPEG 5441x3627 5441x3627+0+0 8-bit sRGB 3.31259MiB 0.000u 0:00.009
+```
